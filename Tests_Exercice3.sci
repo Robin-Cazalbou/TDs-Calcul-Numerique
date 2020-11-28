@@ -41,15 +41,15 @@ for n=10:10:100
     
 end
 
-subplot(1,3,1)
-plot(tailles_de_n, temps_en_n_3b)
+plot(tailles_de_n, [temps_en_n_3b temps_en_n_2b temps_en_n_1b])
 
+/*
 subplot(1,3,2)
 plot(tailles_de_n, temps_en_n_2b)
 
 subplot(1,3,3)
 plot(tailles_de_n, temps_en_n_1b)
-
+*/
 
 
 
