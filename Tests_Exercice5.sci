@@ -25,14 +25,22 @@ end
 
 //=============== Affichage graphique =======================
 
-subplot(1,2,1)
-plot([1:n], [med_err_av med_err_ar])
 
-
-for i=1:n
-    allure_theo(i) = (0.095/80000)*2*i^3/3; //0.095/80000 = coefficient devant le 2n^3/3 prenant en compte le temps d'exécution d'une opération, en moyenne
+X = [1;10;30;50];
+Y = [med_temps(1); med_temps(10); med_temps(30); med_temps(50)];
+for i = 1:n
+    interpolation(i) = myinterpol(i,X,Y);
 end
 
-subplot(1,2,2)
-plot([1:n], [med_temps allure_theo])
+
+subplot(1,3,1)
+plot([1:n]', [med_err_av ])
+
+
+subplot(1,3,2)
+plot([1:n]', [med_err_ar])
+
+
+subplot(1,3,3)
+plot([1:n]', [med_temps interpolation])
 
